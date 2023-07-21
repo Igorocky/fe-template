@@ -9,6 +9,8 @@ let make = () => {
     let modalRef = useModalRef()
     let (msg, setMsg) = React.useState(() => "")
 
+    let (item, setItem) = React.useState(() => None)
+
     let actSendReqToBe = () => {
         BE.method1({msg:msg})->hndRespErr(modalRef)->promiseMap(resp => {
             openInfoDialog(~modalRef, ~title="Response from the BE", ~text=resp.len->Belt_Int.toString, ())
@@ -29,6 +31,7 @@ let make = () => {
                 {"Send"->React.string}
             </Button>
         </Row>
+        <Expln_AutocompleteVirtualized value=item options={["A","B","C"]} size=#small onChange={v => setItem(_ => v)} label="Label" />
         <Expln_React_Modal modalRef />
     </Col>
     
