@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@expln/utils": "0.0.23",
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.11",
@@ -18,8 +19,7 @@
     "react-scripts": "5.0.1",
     "react-window": "^1.8.7",
     "rescript": "^10.1.4",
-    "web-vitals": "^2.1.4",
-    "@expln/utils": "0.0.23"
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "mocha": "^10.1.0",
@@ -33,7 +33,8 @@
     "compile-test-single": "rescript && mocha --timeout 10000000 -g \"'put_test_name_here'\" src/**/test/**/*.js",
     "clean-and-compile-with-deps": "npm run rescript-clean && npm run compile-with-deps",
     "rescript-start": "rescript build -w",
-    "rescript-clean": "rescript clean -with-deps",
+    "rescript-clean-with-deps": "rescript clean -with-deps",
+    "rescript-clean": "rescript clean",
     "start": "set PORT=3002 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
