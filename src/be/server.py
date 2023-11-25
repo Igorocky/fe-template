@@ -33,7 +33,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         return json.loads(body_str)
 
     def invoke_method(self, method_name: str, request: dict):
-        return getattr(methods, method_name)(*request)
+        return getattr(methods, method_name)(**request)
 
     def write_response(self, code: int, resp_body: dict):
         self.send_response(200)

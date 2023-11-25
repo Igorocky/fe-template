@@ -18,9 +18,13 @@
 
 `npm run compile-with-deps`
 
-5. Run the project locally
+5. Run the UI
 
 `npm run start`
+
+6. Run the sever
+
+`python src/be/server.py`
 
 ***How to run all unit tests***
 
